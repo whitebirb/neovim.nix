@@ -1,22 +1,24 @@
-{ ... }:
-{
+{pkgs, ...}: {
   vim = {
     theme = {
       enable = true;
-      name = "oxocarbon";
-      style = "dark";
+      name = "onedark";
+      style = "warmer";
     };
 
     languages = {
       enableTreesitter = true;
+      enableFormat = true;
       bash.enable = true;
       css.enable = true;
       go.enable = true;
       html.enable = true;
+      json.enable = true;
       lua.enable = true;
       markdown.enable = true;
       nix.enable = true;
       python.enable = true;
+      tailwind.enable = true;
       ruby.enable = true;
       sql.enable = true;
       ts.enable = true;
@@ -31,6 +33,10 @@
 
       mappings = {
         renameSymbol = "<leader>lrn";
+      };
+
+      servers = {
+        vue_ls = {};
       };
     };
 
@@ -128,6 +134,7 @@
         toggle = "<leader>t";
       };
       setupOpts = {
+        sync_root_with_cwd = true;
         disable_netrw = true;
         filters = {
           dotfiles = true;
